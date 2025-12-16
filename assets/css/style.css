@@ -1,3 +1,12 @@
+/* start variables */
+:root {
+  --primary-color: #19c8fa;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --light-color: #a8a8a8;
+}
+/* end variables */
+
 /* start global rules */
 * {
   box-sizing: border-box;
@@ -6,15 +15,20 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: black;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -44,8 +58,126 @@ ul {
 
 /* end global rules */
 
-/* start variables */
-:root {
-  --main-color: #fff;
+/* start header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
-/* end variables */
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 95.94px;
+}
+
+header .container::after {
+  content: "";
+  height: 1px;
+  width: calc(100% - 30px);
+  background-color: var(--light-color);
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
+
+header logo .img {
+  height: 40px;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+
+  header nav .burger-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 93px;
+    left: 0;
+    background: #a8a8a8;
+    z-index: 2;
+    width: 100%;
+  }
+
+  header nav ul li a {
+    padding: 15px !important;
+  }
+
+  header nav ul li a:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+  }
+}
+
+header nav ul li {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid transparent;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 40px 30px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--white-color);
+  transition: 0.3s;
+}
+
+header nav ul li.active,
+header nav ul li:hover {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+header nav .search {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  border-left: 1px solid var(--white-color);
+  margin-left: 70px;
+}
+
+@media (max-width: 768px) {
+  header nav .search {
+    margin-left: 23px;
+  }
+}
+
+header nav .search i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+header nav .burger-menu {
+  color: white;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  header nav .burger-menu {
+    display: none;
+  }
+}
+/* end header */
