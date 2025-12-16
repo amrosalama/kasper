@@ -141,6 +141,13 @@ header nav ul li a {
   transition: 0.3s;
 }
 
+@media (min-width: 768px) and (max-width: 990px) {
+  header nav ul li a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 header nav ul li.active,
 header nav ul li:hover {
   color: var(--primary-color);
@@ -153,6 +160,12 @@ header nav .search {
   height: 30px;
   border-left: 1px solid var(--white-color);
   margin-left: 70px;
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+  header nav .search {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 768px) {
