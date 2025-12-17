@@ -2,10 +2,11 @@
 :root {
   --primary-color: #19c8fa;
   --white-color: #ffffff;
-  --black-color: #000000;
+  --black-color: #1f2021;
   --light-color: #a8a8a8;
   --transparent-color: rgb(15 116 143 / 70%);
   --overlay-color: rgb(0 0 0 / 70%);
+  --section-padding: 100px 0;
 }
 /* end variables */
 
@@ -58,6 +59,55 @@ a {
 }
 
 /* end global rules */
+
+/* start components */
+.main-heading {
+  text-align: center;
+}
+
+.main-heading h2 {
+  position: relative;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 60px;
+  color: var(--black-color);
+}
+
+.main-heading h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  width: 95px;
+  height: 1px;
+  background: var(--black-color);
+}
+
+.main-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--white-color);
+  border: 1px solid var(--black-color);
+  border-radius: 50%;
+}
+
+.main-heading p {
+  width: 450px;
+  max-width: 100%;
+  font-size: 13px;
+  color: var(--light-color);
+  margin: 0 auto 40px;
+  line-height: 1.9;
+}
+
+/* end components */
 
 /* start header */
 header {
@@ -245,7 +295,6 @@ header nav .burger-menu {
   .landing .text .content {
     width: 100%;
   }
-  
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -256,7 +305,6 @@ header nav .burger-menu {
   .landing .text .content {
     width: 70%;
   }
-  
 }
 
 .landing .text .content h2 {
@@ -322,3 +370,9 @@ header nav .burger-menu {
   border-color: var(--primary-color);
 }
 /* end landing */
+
+/* start services */
+.services {
+  padding: var(--section-padding);
+}
+/* end services */
