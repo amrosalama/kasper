@@ -180,7 +180,6 @@ header nav ul {
 header nav ul li {
   position: relative;
   z-index: 2;
-  border-bottom: 1px solid transparent;
 }
 
 header nav ul li a {
@@ -190,6 +189,7 @@ header nav ul li a {
   text-transform: uppercase;
   color: var(--white-color);
   transition: 0.3s;
+  border-bottom: 1px solid transparent;
 }
 
 @media (min-width: 768px) and (max-width: 990px) {
@@ -199,8 +199,8 @@ header nav ul li a {
   }
 }
 
-header nav ul li.active,
-header nav ul li:hover {
+header nav ul li.active a,
+header nav ul li:hover a {
   color: var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
 }
@@ -405,8 +405,8 @@ header nav .burger-menu {
 
 .services .service i {
   font-size: 40px;
-    color: var(--black-color);
-    margin-right: 70px;
+  color: var(--black-color);
+  margin-right: 70px;
 }
 
 @media (max-width: 767px) {
@@ -429,3 +429,114 @@ header nav .burger-menu {
   line-height: 1.8;
 }
 /* end services */
+
+/* start design section */
+.design {
+  position: relative;
+  padding: var(--section-padding);
+  background: url(../img/design-section-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  height: 500px;
+  overflow: hidden;
+}
+
+
+.design::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+
+.design .image,
+.design .text {
+  flex: 1;
+  z-index: 2;
+}
+
+.design .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+  }
+}
+
+.design .image img {
+  max-width: 100%;
+  height: 450px;
+  position: relative;
+  bottom: -80px;
+  left: 60px;
+}
+
+.design .text {
+  background: var(--transparent-color);
+  display: flex;
+  justify-content: flex-end;
+  padding: 65px 100px;
+  padding-right: 0;
+}
+
+@media (max-width: 767px) {
+  .design .text {
+    padding: 60px;
+  }
+}
+
+.design .text .content {
+  width: 100%;
+  color: var(--white-color);
+}
+
+.design .text .content h2 {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.design .text .content ul li {
+  font-size: 16px;
+  line-height: 2;
+  font-weight: 400;
+  
+}
+
+.design .text .content ul li::before {
+  content: "";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+  margin-right: 15px;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+
+.design .text .content ul li:nth-child(1)::before {
+  content: "\f3cd";
+}
+.design .text .content ul li:nth-child(2)::before {
+  content: "\f55b";
+}
+.design .text .content ul li:nth-child(3)::before {
+  content: "\e51e";
+}
+.design .text .content ul li:nth-child(4)::before {
+  content: "\f560";
+}
+
+/* end design section */
