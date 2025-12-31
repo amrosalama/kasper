@@ -444,7 +444,6 @@ header nav .burger-menu {
   overflow: hidden;
 }
 
-
 .design::before {
   content: "";
   position: absolute;
@@ -513,7 +512,6 @@ header nav .burger-menu {
   font-size: 16px;
   line-height: 2;
   font-weight: 400;
-  
 }
 
 .design .text .content ul li::before {
@@ -540,3 +538,138 @@ header nav .burger-menu {
 }
 
 /* end design section */
+
+/* start portfolio */
+.portfolio {
+  padding: var(--section-padding);
+}
+
+.portfolio .shuffle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 80px 0 40px 0;
+}
+
+.portfolio .shuffle li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--black-color-color);
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+.portfolio .shuffle li.active,
+.portfolio .shuffle li:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+.portfolio .images-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio .images-container .box {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .images-container .box::after {
+  content: "\2b";
+    font-family: "Font Awesome 7 Free";
+    transition: .3s;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 40px;
+    display: block;
+    background: var(--primary-color);
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.portfolio .images-container .box:hover::after {
+  opacity: 1;
+}
+
+.portfolio .images-container .box:hover .caption {
+  bottom: 0;
+}
+
+.portfolio .images-container .box:hover img {
+  transform: rotate(3deg) scale(1.1);
+}
+
+@media (min-width: 767px) {
+  .portfolio .images-container .box {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1199px) {
+  .portfolio .images-container .box {
+    flex-basis: 25%;
+  }
+}
+
+.portfolio .images-container .box img {
+  max-width: 100%;
+  height: 100%;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.portfolio .images-container .box .caption {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  background-color: var(--white-color);
+  transition: .3s;
+  padding: 20px 10px 20px 50px;
+  cursor: pointer;
+}
+
+.portfolio .images-container .box .caption h4 {
+  font: bold;
+  font-size: 16px;
+  color: var(--black-color);
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+.portfolio .images-container .box .caption p {
+  font-size: 16px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.portfolio a.more {
+    background: var(--primary-color);
+    padding: 15px 50px;
+    display: block;
+    width: fit-content;
+    color: var(--white-color);
+    margin: 50px auto 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.portfolio a.more:hover {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+/* end portfolio */
