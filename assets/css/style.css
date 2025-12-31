@@ -579,23 +579,23 @@ header nav .burger-menu {
 
 .portfolio .images-container .box::after {
   content: "\2b";
-    font-family: "Font Awesome 7 Free";
-    transition: .3s;
-    color: white;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-    font-size: 40px;
-    display: block;
-    background: var(--primary-color);
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0;
+  font-family: "Font Awesome 7 Free";
+  transition: 0.3s;
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  font-size: 40px;
+  display: block;
+  background: var(--primary-color);
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
 }
 
 .portfolio .images-container .box:hover::after {
@@ -625,7 +625,7 @@ header nav .burger-menu {
 .portfolio .images-container .box img {
   max-width: 100%;
   height: 100%;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -635,7 +635,7 @@ header nav .burger-menu {
   bottom: -100%;
   width: 100%;
   background-color: var(--white-color);
-  transition: .3s;
+  transition: 0.3s;
   padding: 20px 10px 20px 50px;
   cursor: pointer;
 }
@@ -656,20 +656,113 @@ header nav .burger-menu {
 }
 
 .portfolio a.more {
-    background: var(--primary-color);
-    padding: 15px 50px;
-    display: block;
-    width: fit-content;
-    color: var(--white-color);
-    margin: 50px auto 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    cursor: pointer;
+  background: var(--primary-color);
+  padding: 15px 50px;
+  display: block;
+  width: fit-content;
+  color: var(--white-color);
+  margin: 50px auto 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
 }
 
 .portfolio a.more:hover {
-    background: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 /* end portfolio */
+
+/* start video section */
+.video {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 16 / 9;
+}
+
+.video .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background-color: var(--transparent-color);
+  text-align: center;
+  z-index: 2;
+  padding: 60px 0;
+}
+
+.video .content h3 {
+  font-size: 25px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white-color);
+  margin-bottom: 30px;
+}
+
+.video .content p {
+  margin-bottom: 50px;
+  color: var(--white-color);
+  font-weight: 100;
+}
+
+.video .content button {
+  border: 1px solid var(--overlay-color);
+  background: var(--overlay-color);
+  color: var(--white-color);
+  padding: 15px 50px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.video .content button:hover {
+  background: transparent;
+}
+/* end video section */
+
+/* start about section */
+.about {
+  padding-top: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about img {
+  max-width: 100%;
+  position: relative;
+  bottom: -117px;
+  margin-top: -90px;
+  left: -4%;
+}
+
+@media (max-width: 767px) {
+  .about img {
+    bottom: -60px;
+    margin-top: -40px;
+  }
+}
+/* end about section */
