@@ -58,6 +58,11 @@ a {
   }
 }
 
+::selection {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
 /* end global rules */
 
 /* start components */
@@ -766,3 +771,512 @@ header nav .burger-menu {
   }
 }
 /* end about section */
+
+/* start statistics section */
+.statistics {
+  position: relative;
+  padding: var(--section-padding);
+  background: url(../img/statisitcs.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.statistics::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+
+.statistics .container {
+  position: relative;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.statistics .container .box {
+  color: var(--white-color);
+  background: var(--transparent-color);
+  padding: 50px;
+}
+
+@media (max-width: 767px) {
+  .statistics .container .box {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .statistics .container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .statistics .container .box {
+    flex-basis: 25%;
+  }
+}
+
+.statistics .container .box i {
+  font-size: 25px;
+  width: 60px;
+  height: 60px;
+  background: var(--black-color);
+  line-height: 60px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.statistics .container .box p.number {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.statistics .container .box p.state {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+/* end statistics section */
+
+/* start our-skills section */
+.our-skills {
+  padding: var(--section-padding);
+}
+
+.our-skills .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+  .our-skills .container > div {
+    flex-basis: 45%;
+  }
+}
+
+.our-skills .container .heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.our-skills .container .heading h2 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: var(--black-color);
+}
+
+.our-skills .container .heading p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--light-color);
+  margin-bottom: 25px;
+}
+
+.our-skills .container .testimonials {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.our-skills .container .testimonials .testimonial-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .our-skills .container .testimonials {
+    margin-bottom: 30px;
+  }
+  .our-skills .container .testimonials .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.our-skills .container .testimonials .testimonial-content img {
+  height: 110px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+
+@media (max-width: 767px) {
+  .our-skills .container .testimonials .testimonial-content img {
+    margin: 15px auto;
+  }
+}
+
+.our-skills .container .testimonials .testimonial-content .text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--black-color);
+  border-bottom: 1px solid var(--light-color);
+}
+
+.our-skills .container .testimonials .testimonial-content .text p {
+  margin: 15px 0;
+  text-align: right;
+  font-size: 13px;
+  color: var(--light-color);
+  text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+  .our-skills .container .testimonials .testimonial-content .text p {
+    text-align: center;
+  }
+}
+
+.our-skills .container .testimonials .testimonial-content .text p span {
+  text-transform: uppercase;
+}
+
+.our-skills .container .testimonials ul.bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.our-skills .container .testimonials ul.bullets li {
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--light-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.our-skills .container .testimonials ul.bullets li.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.our-skills .container .skills {
+}
+
+.our-skills .container .skills .prog-holder {
+  margin-bottom: 30px;
+}
+
+.our-skills .container .skills .prog-holder h4 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.our-skills .container .skills .prog-holder .prog {
+  background: #ddd;
+  height: 30px;
+}
+
+.our-skills .container .skills .prog-holder span {
+  position: relative;
+  display: block;
+  background: var(--primary-color);
+  height: 100%;
+}
+
+.our-skills .container .skills .prog-holder span::before {
+  content: attr(data-progress);
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  padding: 5px 0;
+  color: var(--white-color);
+  background-color: var(--black-color);
+  font-size: 14px;
+  width: 40px;
+  text-align: center;
+  /* border-radius: 4px; */
+}
+
+.our-skills .container .skills .prog-holder span::after {
+  content: "";
+  border-style: solid;
+  border-width: 8px;
+  border-color: var(--black-color) transparent transparent;
+  position: absolute;
+  top: -14px;
+  right: -8px;
+}
+/* end our-skills section */
+
+/* start quote section */
+.quote {
+  position: relative;
+  padding: var(--section-padding);
+  color: var(--white-color);
+  background-image: url(../img/quote.png);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+
+.quote .container {
+  position: relative;
+}
+
+.quote q {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.quote q::before {
+  content: "\f10d"; /*e81b*/
+  font-family: "Font Awesome 7 Free";
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.quote q::after {
+  content: "\f10e"; /*e81c*/
+  font-family: "Font Awesome 7 Free";
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.quote span {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.quote span::before {
+  content: "-";
+  margin-right: 5px;
+}
+/* end quote section */
+
+/* start pricing section */
+.pricing {
+  padding: var(--section-padding);
+  color: var(--black-color);
+}
+
+.pricing .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.pricing .plan {
+  background-color: #fcfcfc;
+  text-align: center;
+}
+
+.pricing .plan .head {
+  padding: 50px 20px;
+  border-top: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.pricing .plan .head h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.pricing .plan .head div.price {
+}
+
+.pricing .plan .head div.price span.currency {
+  position: relative;
+  top: -40px;
+  left: -10px;
+  font-size: 20px;
+}
+
+.pricing .plan .head div.price span.price {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.pricing .plan .head div.price span.duration {
+  position: relative;
+  left: 10px;
+  font-size: 20px;
+}
+
+.pricing .plan ul {
+}
+
+.pricing .plan ul li {
+  position: relative;
+  padding: 20px 10px;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.pricing .plan ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid var(--primary-color);
+  width: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.pricing .plan .foot {
+  padding: 40px 20px;
+  border-top: 1px solid var(--primary-color);
+}
+
+.pricing .plan .foot a {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid var(--primary-color);
+  color: var(--black-color);
+  transition: 0.3s;
+}
+
+.pricing .plan .foot a:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+.pricing p.contact-text {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--black-color);
+}
+
+.pricing a.contact-link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
+  border: 1px solid var(--primary-color);
+  padding: 10px 30px;
+  background: var(--primary-color);
+  color: var(--white-color);
+  transition: 0.3s;
+  text-transform: capitalize;
+}
+
+.pricing a.contact-link:hover {
+  background-color: transparent;
+  color: var(--black-color);
+}
+/* end pricing section */
+
+/* start subscribe section */
+.subscribe {
+  position: relative;
+  padding: var(--section-padding);
+  background-image: url(../img/subscribe.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.subscribe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+
+.subscribe .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .subscribe .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.subscribe form {
+  position: relative;
+  display: flex;
+  width: 1000px;
+  max-width: 100%;
+}
+
+.subscribe form ::placeholder {
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.subscribe form i {
+  position: absolute;
+  color: var(--white-color);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 23px;
+  font-size: 20px;
+}
+
+.subscribe form input[type="email"] {
+  background: transparent;
+  padding: 20px 20px 20px 60px;
+  border: 1px solid var(--white-color);
+  border-right: none;
+  caret-color: var(--primary-color);
+  color: var(--white-color);
+  width: calc(100% - 120px);
+}
+
+.subscribe form input[type="email"]::before {
+  content: "\f0e0";
+  font-family: "Font Awesome 7 Free";
+  position: relative;
+}
+
+.subscribe form input[type="submit"] {
+  padding: 20px;
+  border: 1px solid var(--white-color);
+  border-left: none;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 120px;
+  cursor: pointer;
+}
+
+.subscribe form input[type="email"]:focus,
+.subscribe form input[type="submit"]:focus {
+  outline: none;
+}
+
+.subscribe p {
+  color: var(--white-color);
+  margin-left: 50px;
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .subscribe p {
+    margin-top: 30px;
+    line-height: 1.9;
+  }
+}
+/* end subscribe section */
